@@ -95,6 +95,7 @@ namespace Futureware.MantisConnect
 			this.AccessMin = new ObjectRef(projectData.access_min);
 			this.FilePath = projectData.file_path;
 			this.Description = projectData.description;
+			this.subprojects = Project.ConvertArray(projectData.subprojects);
 		}
 
         /// <summary>
@@ -228,4 +229,13 @@ namespace Futureware.MantisConnect
 			set { this.description = value; }
 		}
 	}
+	
+	/// <summary>
+	/// Gets subprojects from this project.
+	/// </summary>
+	/// <value>Can be empty or null.</value>
+		public Project[] Subprojects
+		{
+			get { return this.subprojects; }
+		}
 }
